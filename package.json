@@ -1,11 +1,11 @@
 {
   "config": {
-    "name": "Your Name",
-    "sitename": "sitename",
+    "name": "Landmark Auctions",
+    "sitename": "landmarkauctions",
     "localserverpath": "/public/wp-content/themes/",
     "productionserverpath": "/wp-content/themes/",
-    "themename": "themename",
-    "siteurl": "http://sitename.com/"
+    "themename": "landmarkauctions",
+    "siteurl": "http://landmarkauctions.co.uk/"
   },
   "name": "custom-wp-gulp-build",
   "version": "1.0.0",
