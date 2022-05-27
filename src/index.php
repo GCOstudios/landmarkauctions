@@ -1,108 +1,57 @@
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
-    <link rel="profile" href="http://gmpg.org/xfn/11">
-    
-    <?php wp_head(); ?>
-</head>
-<body <?php body_class(); ?>>
+<?php
+/**
+ * The main template file
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package landmarkauctions
+ */
 
-	<header id="masthead" class="site-header" role="banner">
+get_header();
+?>
 
-		<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-      <!-- Your site title as branding in the menu -->
-      <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?>
-      </a>
+	<main id="primary" class="site-main">
 
-      <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+		<?php
+		if ( have_posts() ) :
 
-				<!-- The WordPress Menu goes here -->
-        <div id="navigation" class="collapse navbar-collapse">
-				  <?php wp_nav_menu(
-              array(
-                  'theme_location' => 'menu-1',
-                  'depth' => 1,
-                  'menu_id' => 'primary-menu',
-                  'container_class' => false,
-                  'menu_class' => 'navbar-nav',
-                  'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-                  // 'walker' 			=> new wp_bootstrap_navwalker()
-              )
-          ); ?>
-        </div>
-		</nav><!-- .site-navigation -->
-	</header><!-- #masthead -->
-    
-    <div class="container">
-    	<div class="row">
-        <main id="main" class="site-main col-xs-12 col-sm-6 col-md-8" role="main">
-        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-          <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-              <header class="entry-header">
-                  <?php
-                  if ( is_single() ) :
-                      the_title( '<h1 class="entry-title">', '</h1>' );
-                  else :
-                      the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-                  endif;
-          
-                  if ( 'post' === get_post_type() ) : ?>
-                  <div class="entry-meta">
-                      
-                  </div><!-- .entry-meta -->
-                  <?php
-                  endif;
-    			  ?>
-              </header><!-- .entry-header -->
-          
-              <div class="entry-content">
-                  <?php
-                    if (is_home()) {
-                      the_excerpt();
-                    } else {
-                      the_content( sprintf(
-                          /* translators: %s: Name of current post. */
-                          wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'joseguerrauk' ), array( 'span' => array( 'class' => array() ) ) ),
-                          the_title( '<span class="screen-reader-text">"', '"</span>', false )
-                      ) );
-                    }
-          
-                    wp_link_pages( array(
-                        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'joseguerrauk' ),
-                        'after'  => '</div>',
-                    ) );
-                  ?>
-              </div><!-- .entry-content -->
-          </article>
-        <?php endwhile; endif; ?>
-        </main>
+			if ( is_home() && ! is_front_page() ) :
+				?>
+				<header>
+					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+				</header>
+				<?php
+			endif;
 
-        <?php
-          if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-            return;
-          }
-        ?>
+			/* Start the Loop */
+			while ( have_posts() ) :
+				the_post();
 
-        <aside  id="secondary" class="widget-area col-xs-6 col-md-4" role="complementary">
-        	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-        </aside>
-    	</div><!-- .row -->
-    </div><!-- .container -->
+				/*
+				 * Include the Post-Type-specific template for the content.
+				 * If you want to override this in a child theme, then include a file
+				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+				 */
+				get_template_part( 'template-parts/content', get_post_type() );
 
+			endwhile;
 
-    <footer id="colophon" class="site-footer" role="contentinfo">
-        <div class="site-info">
-            &copy; <?php echo date('Y'); ?>
-        </div><!-- .site-info -->
-    </footer><!-- #colophon -->
+			the_posts_navigation();
 
-<?php wp_footer(); ?>
+		else :
 
-</body>
-</html>
+			get_template_part( 'template-parts/content', 'none' );
+
+		endif;
+		?>
+
+	</main><!-- #main -->
+
+<?php
+get_sidebar();
+get_footer();
