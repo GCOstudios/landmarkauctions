@@ -1,0 +1,16 @@
+.section-one {
+  padding: 0 1rem;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1110px;
+  }
+
+  .card {
+    flex: 1;
+    max-width: 350px;
+    width: 100%;
+  }
+}

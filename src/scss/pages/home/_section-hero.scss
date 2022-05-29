@@ -1,0 +1,15 @@
+@use '../../abstracts/colors';
+
+.hero {
+  margin-bottom: 100px;
+  position: relative;
+}
+
+.hero-info {
+  background-color: colors.$m1;
+  color: white;
+  position: absolute;
+  right: 80px;
+  bottom: 80px;
+  z-index: 10;
+}

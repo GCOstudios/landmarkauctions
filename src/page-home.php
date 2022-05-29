@@ -14,8 +14,22 @@ get_header(); ?>
       </div>
     </div>
     
-    <div>
-      <p>Three Cards: Auction guild, Sell Now, Valuations</p>
+    <div class="section-one">
+      <div class="container">
+        <?php
+        $secitonOne = get_field('section_one');
+        if($secitonOne):?>
+          <div class="card">
+            <?php echo $secitonOne['auction_guide'] ?>
+          </div>
+          <div class="card">
+            <?php echo $secitonOne['sell_now'] ?>
+          </div>
+          <div class="card">
+            <?php echo $secitonOne['valuations'] ?>
+          </div>
+        <?php endif; ?>
+      </div>
     </div>
     <div>
       <p>Section with image and CTA</p>
@@ -30,7 +44,7 @@ get_header(); ?>
       <p>Four cards: Register with us, FAQ's, Meet the team, Contact us</p>
     </div>
     <div>
-      <p>Carousel with quotes</p>ß
+      <p>Carousel with quotes</p>
     </div>
   </main>
 <?php
