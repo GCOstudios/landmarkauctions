@@ -1,0 +1,55 @@
+@use '../abstracts/colors';
+
+// ================================
+// Header and Branding
+// ================================
+
+.site-header {
+  background-color: colors.$m1;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.site-branding {
+  a {
+    color: white;
+  }
+}
+
+.site-title {}
+
+.site-description {}
+
+// ================================
+// Main Navigation
+// ================================
+
+.main-navigation {}
+
+#primary-menu {
+
+  // This is the UL
+  .nav-menu {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    a {
+      color: white;
+    }
+  }
+}
+
+// Mobile Toggle
+// ================================
+
+.menu-toggle {
+  display: none;
+}

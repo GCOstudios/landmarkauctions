@@ -1,0 +1,19 @@
+@use '../abstracts/colors';
+
+// ================================
+// Footer and colophon
+// ================================
+.site-footer {
+  background-color: colors.$m1;
+  color: white;
+  padding: 60px;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.site-info {
+  text-align: center;
+}
