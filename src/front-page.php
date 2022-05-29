@@ -1,8 +1,14 @@
 <?php get_header(); ?>
   <main>
-    <div>
-      <h1>Hero Banner</h1>
+    <div class="hero">
+      <?php echo do_shortcode('[slick-slider arrows="false"]'); ?>
+      <div class="hero-info">
+        <h2>Sell or Buy a property</h2>
+        <p>For more information and enquiries, contact<br>us for some friendly no fee advice.</p>
+        <p>07974 179 607</p>
+      </div>
     </div>
+    
     <div>
       <p>Three Cards: Auction guild, Sell Now, Valuations</p>
     </div>
