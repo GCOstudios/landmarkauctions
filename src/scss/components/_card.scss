@@ -1,0 +1,7 @@
+@use '../abstracts/colors';
+
+.card {
+  background-color: colors.$s1;
+  color: white;
+  padding: 1rem;
+}
