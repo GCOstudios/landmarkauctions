@@ -1,0 +1,11 @@
+@use '../../abstracts/colors';
+
+.section-three {
+  background-color: colors.$s2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  max-height: 315px;
+  padding: 1rem;
+}

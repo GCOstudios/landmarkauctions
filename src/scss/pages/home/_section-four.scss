@@ -1,0 +1,21 @@
+.section-info {
+  display: flex;
+  align-items: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  max-height: 614px;
+}
+
+.section-container {
+  margin: auto;
+  max-width: 1140px;
+  padding: 1rem;
+  width: 100%;
+}
+
+.section-entry {
+  color: white;
+  max-width: 360px;
+}

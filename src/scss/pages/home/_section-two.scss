@@ -1,0 +1,24 @@
+@use '../../abstracts/colors';
+
+.section-two {
+  background-color: colors.$s2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  > div {
+    max-width: 50%;
+    width: 100%;
+  }
+
+  .section-image {
+    background-color: colors.$s1;
+  }
+
+  .section-info {}
+
+  .section-container {
+    margin: auto;
+    max-width: 66%;
+  }
+}
