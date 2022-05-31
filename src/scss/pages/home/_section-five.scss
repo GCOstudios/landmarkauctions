@@ -1,0 +1,16 @@
+@use '../../abstracts/colors';
+
+.section-five {
+  display: flex;
+  margin-bottom: 100px;
+
+  .card {
+    background-color: white;
+    color: black;
+    padding: 50px;
+
+    &:nth-child(odd) {
+      background-color: colors.$s2;
+    }
+  }
+}
