@@ -6,7 +6,7 @@
 get_header(); ?>
   <main>
     <div class="hero">
-      <?php echo do_shortcode('[slick-slider arrows="false"]'); ?>
+      <?php echo do_shortcode('[slick-slider category="3" arrows="false"]'); ?>
       <div class="hero-info">
         <h2>Sell or Buy a property</h2>
         <p>For more information and enquiries, contact<br>us for some friendly no fee advice.</p>
@@ -65,11 +65,26 @@ get_header(); ?>
           </div>
         <?php endif; ?>
     </div>
-    <div>
-      <p>Four cards: Register with us, FAQ's, Meet the team, Contact us</p>
+    <div class="section-five">
+    <?php
+        $secitonFive = get_field('section_five');
+        if($secitonFive):?>
+          <div class="card">
+            <?php echo $secitonFive['register_with_us']; ?>
+          </div>
+          <div class="card">
+            <?php echo $secitonFive['faq']; ?>
+          </div>
+          <div class="card">
+            <?php echo $secitonFive['meet_the_team']; ?>
+          </div>
+          <div class="card">
+            <?php echo $secitonFive['contact_us']; ?>
+          </div>
+        <?php endif; ?>
     </div>
-    <div>
-      <p>Carousel with quotes</p>
+    <div class="section-six">
+    <?php echo do_shortcode('[slick-slider design="design-5" category="4" arrows="false"]'); ?>
     </div>
   </main>
 <?php
