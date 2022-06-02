@@ -6,14 +6,45 @@
 .site-footer {
   background-color: colors.$m1;
   color: white;
-  padding: 60px;
+  padding: 100px 20px 50px;
 
   a {
     color: white;
     text-decoration: none;
   }
+
+  h2 {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    color: colors.$m2;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .widget-area {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .below-widget-area {}
+
+  .widget-logos {
+    margin-bottom: 2rem;
+    text-align: right;
+  }
 }
 
 .site-info {
   text-align: center;
+}
+
+.divider {
+  border-color: white;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.1;
 }
