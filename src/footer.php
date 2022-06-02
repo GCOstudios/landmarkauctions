@@ -1,4 +1,22 @@
 	<footer id="colophon" class="site-footer">
+    <div class="container">
+      <figure>
+        <img src="<?php bloginfo('template_url'); ?>/images/LandmarkAuctions_Logo.svg" alt="<?php bloginfo('name'); ?>" width="273" height="62" />
+      </figure>
+      <hr class="divider" />
+      <div class="widget-area">
+        <?php if (is_active_sidebar('footer-1')){dynamic_sidebar('footer-1');} ?>
+        <?php if (is_active_sidebar('footer-2')){dynamic_sidebar('footer-2');} ?>
+        <?php if (is_active_sidebar('footer-3')){dynamic_sidebar('footer-3');} ?>
+        <?php if (is_active_sidebar('footer-4')){dynamic_sidebar('footer-4');} ?>
+      </div>
+      <div class="below-widget-area">
+        <?php if (is_active_sidebar('footer-5')){dynamic_sidebar('footer-5');} ?>
+      </div>
+      <div class="widget-logos">
+        <?php if (is_active_sidebar('footer-6')){dynamic_sidebar('footer-6');} ?>
+      </div>
+    </div>
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'landmarkauctions' ) ); ?>">
 				<?php
