@@ -35,7 +35,7 @@ get_header(); ?>
       <?php
         $secitonTwo = get_field('section_two');
         if($secitonTwo):?>
-          <div class="section-image">
+          <div style="background-image: url(<?php echo esc_url( $secitonTwo['image']['url'] ); ?>)" class="section-image">
             <img src="<?php echo esc_url( $secitonTwo['image']['url'] ); ?>" alt="<?php echo esc_attr( $secitonTwo['image']['alt'] ); ?>" />
           </div>
           <div class="seciton-info">
