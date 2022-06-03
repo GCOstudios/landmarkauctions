@@ -3,4 +3,16 @@
 .section-six {
   background-color: colors.$s2;
   padding: 1rem 0;
+  position: relative;
+
+  &::before {
+    content: '';
+    background-color: colors.$m2;
+    width: 1px;
+    height: 52px;
+    position: absolute;
+    top: -26px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }

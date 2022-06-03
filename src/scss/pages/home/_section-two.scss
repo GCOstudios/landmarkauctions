@@ -13,12 +13,20 @@
 
   .section-image {
     background-color: colors.$s1;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    img {
+      max-width: 100%;
+      opacity: 0;
+    }
   }
 
   .section-info {}
 
   .section-container {
     margin: auto;
-    max-width: 66%;
+    max-width: 72%;
   }
 }

@@ -1,7 +1,26 @@
 @use '../abstracts/colors';
 
 .card {
+  font-size: 14px;
+  line-height: 21px;
   background-color: colors.$s1;
-  color: white;
-  padding: 1rem;
+  color: colors.$s3;
+  padding: 30px;
+
+  h2,
+  h3 {
+    font-size: 22px;
+    line-height: 26px;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+
+  p {
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }

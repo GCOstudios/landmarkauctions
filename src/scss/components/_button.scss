@@ -1,0 +1,19 @@
+@use '../abstracts/colors';
+
+.btn {
+  font-size: 12px;
+  display: inline-block;
+  background-color: colors.$m2;
+  border-radius: 4px;
+  color: white;
+  padding: 15px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+
+  &:focus,
+  &:hover {
+    background-color: colors.$m3;
+    color: colors.$s1;
+  }
+}

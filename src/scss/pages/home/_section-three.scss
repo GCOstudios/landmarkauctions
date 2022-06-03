@@ -9,3 +9,40 @@
   max-height: 315px;
   padding: 1rem;
 }
+
+.section-container {
+  font-size: 14px;
+  line-height: 21px;
+  color: colors.$d1;
+
+  h2 {
+    font-size: 34px;
+    line-height: 41px;
+    color: colors.$m1;
+    position: relative;
+
+    &::before {
+      content: '';
+      background-color: colors.$m2;
+      height: 4px;
+      width: 65px;
+      position: absolute;
+      top: -15px;
+      left: 0;
+    }
+  }
+}
+
+.section-quote {
+
+  blockquote {
+    font-size: 45px;
+    font-weight: bold;
+    color: colors.$m1;
+    text-align: center;
+  }
+
+  .gold-text {
+    color: colors.$m2;
+  }
+}

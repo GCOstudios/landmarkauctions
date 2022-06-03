@@ -6,11 +6,16 @@
 
   .card {
     background-color: white;
-    color: black;
+    color: colors.$d1;
     padding: 50px;
 
     &:nth-child(odd) {
       background-color: colors.$s2;
+    }
+
+    h2,
+    h3 {
+      color: colors.$m1;
     }
   }
 }
