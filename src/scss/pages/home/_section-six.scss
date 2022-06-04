@@ -15,4 +15,21 @@
     left: 50%;
     transform: translateX(-50%);
   }
+
+  .wpsisac-slick-slider h2.wpsisac-slide-title {
+    display: none;
+  }
+
+  .quote-text {
+    font-size: 45px!important;
+    font-weight: bold;
+    color: colors.$m1;
+  }
+
+  .gold-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: colors.$m2;
+    text-transform: uppercase;
+  }
 }
