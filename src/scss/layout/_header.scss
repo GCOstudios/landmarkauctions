@@ -31,15 +31,19 @@
 // Main Navigation
 // ================================
 
-.main-navigation {}
-
-#primary-menu {
+.main-navigation {
 
   // This is the UL
   .nav-menu {
     margin: 0;
     padding: 0;
     list-style-type: none;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
 
     a {
       color: white;
@@ -49,8 +53,48 @@
       display: inline-block;
       margin-right: 20px;
 
+      > a {
+        padding: 15px 2px;
+      }
+
       &:last-child {
         margin-right: 0;
+      }
+    }
+  }
+}
+
+.menu-item-has-children {
+  position: relative;
+
+  &:hover {
+
+    .sub-menu {
+      display: block;
+    }
+  }
+
+  .sub-menu {
+    display: none;
+    background-color: white;
+    padding: 15px;
+    position: absolute;
+    top: 33px;
+    left: 0;
+    z-index: 10;
+
+    > li {
+
+      a {
+        display: block;
+        color: colors.$d1;
+        padding: 0 15px 15px;
+      }
+
+      &:first-child {
+        a {
+          padding-top: 15px;
+        }
       }
     }
   }
