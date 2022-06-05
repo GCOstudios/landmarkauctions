@@ -175,7 +175,13 @@
           padding: 15px 0;
         }
       }
-    }   
+    }
+
+    @include mixins.breakpoint(breakpoints.$bp-tablet) {
+      .sub-menu {
+        display: none;
+      }
+    }
   }
 }
 
