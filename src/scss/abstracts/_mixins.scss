@@ -1,0 +1,16 @@
+// ================================
+// Breakpoint
+// ================================
+
+// http://jakearchibald.github.io/sass-ie/
+
+// Example Usage:
+// .element {
+//   @include breakpoint($bp-medium) {}
+// }
+
+@mixin breakpoint($flex-pivot) {
+  @media (min-width: $flex-pivot) {
+    @content;
+  }
+}
