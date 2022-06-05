@@ -1,4 +1,6 @@
 @use '../abstracts/colors';
+@use '../abstracts/breakpoints';
+@use '../abstracts/mixins';
 
 // ================================
 // Header and Branding
@@ -10,7 +12,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 60px;
+  padding: 24px 20px;
+
+  @include mixins.breakpoint(breakpoints.$bp-mobile) {
+    padding: 24px 60px;
+  }
 
   a {
     text-decoration: none;
@@ -21,11 +27,30 @@
   a {
     color: white;
   }
+
+  .custom-logo-link {
+
+    img {
+      height: 40px;
+      width: 176px;
+    }
+  }
+
+  @include mixins.breakpoint(breakpoints.$bp-tablet) {
+    .custom-logo-link {
+
+      img {
+        height: auto;
+        width: auto;
+      }
+    }
+  }
 }
 
-.site-title {}
-
-.site-description {}
+.site-title,
+.site-description {
+  display: none;
+}
 
 // ================================
 // Main Navigation

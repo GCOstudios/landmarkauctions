@@ -1,4 +1,6 @@
 @use '../../abstracts/colors';
+@use '../../abstracts/breakpoints';
+@use '../../abstracts/mixins';
 
 .section-six {
   background-color: colors.$s2;
@@ -16,14 +18,28 @@
     transform: translateX(-50%);
   }
 
+  .slick-slider {
+    blockquote {
+      margin: 0;
+
+      @include mixins.breakpoint(breakpoints.$bp-mobile) {
+        margin: 1rem 40px;
+      }
+    }
+  }
+
   .wpsisac-slick-slider h2.wpsisac-slide-title {
     display: none;
   }
 
   .quote-text {
-    font-size: 45px!important;
+    font-size: 28px!important;
     font-weight: bold;
     color: colors.$m1;
+
+    @include mixins.breakpoint(breakpoints.$bp-mobile) {
+      font-size: 45px!important;
+    }
   }
 
   .gold-text {
@@ -31,5 +47,13 @@
     font-size: 14px;
     color: colors.$m2;
     text-transform: uppercase;
+  }
+
+  .wpsisac-slick-slider.design-5 .wpsisac-image-slide .wpsisac-slide-wrap .wpsisac-slider-content {
+    padding: 30px 20px;
+
+    @include mixins.breakpoint(breakpoints.$bp-mobile) {
+      padding: 60px 50px;
+    }
   }
 }

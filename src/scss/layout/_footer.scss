@@ -1,4 +1,6 @@
 @use '../abstracts/colors';
+@use '../abstracts/breakpoints';
+@use '../abstracts/mixins';
 
 // ================================
 // Footer and colophon
@@ -13,6 +15,24 @@
     text-decoration: none;
   }
 
+  .footer-logo {
+    margin: 0;
+    padding: 0;
+
+    img {
+      height: 40px;
+      width: 176px;
+    }
+
+    @include mixins.breakpoint(breakpoints.$bp-mobile) {
+
+      img {
+        height: auto;
+        width: auto;
+      }
+    }
+  }
+
   h2 {
     font-size: 1.25rem;
     line-height: 1.2;
@@ -24,9 +44,14 @@
 
   .widget-area {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     margin-top: 3rem;
     margin-bottom: 2rem;
+
+    @include mixins.breakpoint(breakpoints.$bp-tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   .below-widget-area {}

@@ -1,8 +1,15 @@
 @use '../../abstracts/colors';
+@use '../../abstracts/mixins';
+@use '../../abstracts/breakpoints';
 
 .section-five {
   display: flex;
+  flex-direction: column;
   margin-bottom: 100px;
+
+  @include mixins.breakpoint(breakpoints.$bp-tablet) {
+    flex-direction: row;
+  }
 
   .card {
     background-color: white;

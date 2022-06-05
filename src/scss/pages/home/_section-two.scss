@@ -1,13 +1,15 @@
 @use '../../abstracts/colors';
+@use '../../abstracts/breakpoints';
+@use '../../abstracts/mixins';
 
 .section-two {
   background-color: colors.$s2;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 
   > div {
-    max-width: 50%;
     width: 100%;
   }
 
@@ -16,6 +18,8 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    margin-bottom: 50px;
+    max-height: 300px;
 
     img {
       max-width: 100%;
@@ -27,6 +31,24 @@
 
   .section-container {
     margin: auto;
-    max-width: 72%;
+  }
+
+  @include mixins.breakpoint(breakpoints.$bp-mobile) {
+    .section-container {
+      max-width: 72%;
+    }
+  }
+
+  @include mixins.breakpoint(1000px) {
+    flex-direction: row;
+
+    > div {
+      max-width: 50%;
+    }
+
+    .section-image {
+      margin-bottom: 0;
+      max-height: none;
+    }
   }
 }
