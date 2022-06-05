@@ -1,6 +1,6 @@
 	<footer id="colophon" class="site-footer">
     <div class="container">
-      <figure>
+      <figure class="footer-logo">
         <img src="<?php bloginfo('template_url'); ?>/images/LandmarkAuctions_Logo.svg" alt="<?php bloginfo('name'); ?>" width="273" height="62" />
       </figure>
       <hr class="divider" />
