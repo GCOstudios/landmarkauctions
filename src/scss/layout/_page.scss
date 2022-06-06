@@ -1,0 +1,29 @@
+@use '../abstracts/breakpoints';
+
+.page-hero {
+  margin-bottom: 60px;
+  max-height: 553px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.page-padding {
+  margin-bottom: 60px;
+  padding: 1rem;
+}
+
+.inner-page {
+  width: 100%;
+  margin: 0 auto;
+  max-width: breakpoints.$container;
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 500;
+  }
+}
