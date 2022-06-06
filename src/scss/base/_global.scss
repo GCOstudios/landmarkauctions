@@ -1,7 +1,11 @@
 @use '../abstracts/breakpoints';
+@use '../abstracts/colors';
 
 html,
 body {
+  font-size: 14px;
+  line-height: 1.5;
+  color: colors.$d1;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
@@ -26,4 +30,8 @@ h5,
 h6,
 p {
   margin-top: 0;
+}
+
+h1 {
+  color: colors.$m1;
 }
