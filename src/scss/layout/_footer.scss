@@ -52,6 +52,14 @@
       flex-direction: row;
       justify-content: space-between;
     }
+
+    .wp-social-link-facebook,
+    .wp-social-link-instagram,
+    .wp-social-link-linkedin,
+    .wp-social-link-twitter {
+      background-color: white;
+      color: colors.$m1;
+    }
   }
 
   .below-widget-area {}
@@ -59,6 +67,15 @@
   .widget-logos {
     margin-bottom: 2rem;
     text-align: right;
+  }
+}
+
+.footer-gallery {
+
+  > div {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
   }
 }
 
