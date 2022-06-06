@@ -12,6 +12,8 @@
 
   .card {
     flex: 1;
+    background: rgb(16,59,104);
+    background: radial-gradient(circle, rgba(16,59,104,1) 0%, rgba(20,45,71,1) 100%);
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
