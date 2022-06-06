@@ -6,6 +6,24 @@
   margin-bottom: 100px;
   position: relative;
 
+  .slick-slider {
+
+    &::before {
+      content: '';
+      background-color: rgba(0,0,0,0.5);
+      width: 100%;
+      height: calc(100% - 4px);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .slick-dots {
+      z-index: 5;
+    }
+  }
+
   .wpsisac-slick-slider img {
     width: 100%;
   }
@@ -14,14 +32,15 @@
 .hero-info {
   font-size: 14px;
   line-height: 1.5;
-  background-color: rgba(colors.$m1, 0.7);
+  // background-color: rgba(colors.$m1, 0.7);
   color: white;
   padding: 1rem;
   position: absolute;
-  right: 0;
-  bottom: 50px;
+  right: 40px;
+  bottom: 40px;
   z-index: 10;
   text-align: right;
+  width: 100%;
 
   h2 {
     font-size: 34px;
@@ -39,7 +58,7 @@
   }
 
   @include mixins.breakpoint(breakpoints.$bp-mobile) {
-    right: 80px;
-    bottom: 80px;
+    right: 60px;
+    bottom: 60px;
   }
 }
