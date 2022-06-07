@@ -14,3 +14,9 @@
     @content;
   }
 }
+
+@mixin maxbp($flex-pivot) {
+  @media (max-width: $flex-pivot - 1px) {
+    @content;
+  }
+}
