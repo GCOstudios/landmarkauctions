@@ -139,19 +139,19 @@
 
   .sub-menu {
     display: none;
-    background-color: white;
+    background-color: transparent;
     padding: 15px;
-    position: absolute;
-    top: 33px;
-    left: 0;
-    z-index: 10;
+    position: relative;
+    top: 0;
 
     > li {
+      margin: 0 55px 0 25px;
 
       a {
         display: block;
         color: colors.$d1;
         padding: 0 15px 15px;
+        white-space: nowrap;
       }
 
       &:first-child {
@@ -160,27 +160,32 @@
         }
       }
     }
-  }
-
-  &.focus {
-    .sub-menu {
-      display: block;
-      background-color: transparent;
-      position: relative;
-      top: 0;
-
-      > li {
-
-        a {
-          color: white;
-          padding: 15px 0;
-        }
-      }
-    }
 
     @include mixins.breakpoint(breakpoints.$bp-tablet) {
+      background-color: white;
+      box-shadow: 0 8px 20px 0 rgb(0 41 99 / 20%);
+      position: absolute;
+      top: 33px;
+      left: 0;
+      z-index: 10;
+    }
+  }
+
+  @include mixins.maxbp(breakpoints.$bp-tablet) {
+    &.focus {
       .sub-menu {
-        display: none;
+        display: block;
+        background-color: transparent;
+        position: relative;
+        top: 0;
+  
+        > li {
+  
+          a {
+            color: white;
+            padding: 15px 0;
+          }
+        }
       }
     }
   }
