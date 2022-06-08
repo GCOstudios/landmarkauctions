@@ -145,18 +145,28 @@
     top: 0;
 
     > li {
-      margin: 0 55px 0 25px;
+      padding: 0 55px 0 25px;
 
       a {
         display: block;
         color: colors.$d1;
-        padding: 0 15px 15px;
+        padding: 10px 15px;
         white-space: nowrap;
       }
 
-      &:first-child {
-        a {
-          padding-top: 15px;
+      // &:first-child {
+      //   a {
+      //     padding-top: 15px;
+      //   }
+      // }
+
+      @include mixins.breakpoint(breakpoints.$bp-tablet) {
+        &:hover {
+          background-color: colors.$s3;
+
+          a {
+            color: colors.$m1;
+          }
         }
       }
     }
