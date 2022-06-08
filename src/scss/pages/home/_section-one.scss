@@ -7,7 +7,11 @@
   .container {
     display: flex;
     flex-direction: column;
-    max-width: 1110px;
+    max-width: 1140px;
+
+    @include mixins.breakpoint(1500px) {
+      max-width: 1400px;
+    }
   }
 
   .card {
@@ -20,7 +24,7 @@
     max-width: 690px;
   }
 
-  @include mixins.breakpoint(1110px) {
+  @include mixins.breakpoint(1140px) {
     
     .container {
       flex-direction: row;
@@ -31,6 +35,12 @@
       margin-bottom: 0;
       max-width: 350px;
       width: 100%;
+    }
+  }
+
+  @include mixins.breakpoint(1500px) {
+    .card {
+      max-width: 437px;
     }
   }
 }
