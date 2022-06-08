@@ -19,13 +19,13 @@ get_header(); ?>
         <?php
         $secitonOne = get_field('section_one');
         if($secitonOne):?>
-          <div class="card">
+          <div class="card box-item">
             <?php echo $secitonOne['auction_guide']; ?>
           </div>
-          <div class="card">
+          <div class="card box-item">
             <?php echo $secitonOne['sell_now']; ?>
           </div>
-          <div class="card">
+          <div class="card box-item">
             <?php echo $secitonOne['valuations']; ?>
           </div>
         <?php endif; ?>
@@ -35,11 +35,11 @@ get_header(); ?>
       <?php
         $secitonTwo = get_field('section_two');
         if($secitonTwo):?>
-          <div style="background-image: url(<?php echo esc_url( $secitonTwo['image']['url'] ); ?>)" class="section-image">
+          <div style="background-image: url(<?php echo esc_url( $secitonTwo['image']['url'] ); ?>)" class="section-image fade-right">
             <img src="<?php echo esc_url( $secitonTwo['image']['url'] ); ?>" alt="<?php echo esc_attr( $secitonTwo['image']['alt'] ); ?>" />
           </div>
           <div class="seciton-info">
-            <div class="section-container">
+            <div class="section-container fade-left">
               <?php echo $secitonTwo['online_auctions']; ?>
             </div>
           </div>
@@ -47,7 +47,7 @@ get_header(); ?>
     </div>
     <div class="section-three">
       <?php if( get_field('section_three') ): ?>
-        <div class="section-quote">
+        <div class="section-quote fade-in">
           <?php the_field('section_three'); ?>
         </div>
       <?php endif; ?>
@@ -58,7 +58,7 @@ get_header(); ?>
         if($secitonFour):?>
           <div style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('<?php echo esc_url( $secitonFour['background_image']['url'] ); ?>');" class="section-info">
             <div class="section-container">
-              <div class="section-entry">
+              <div class="section-entry fade-right">
                 <?php echo $secitonFour['why_landmark']; ?>
               </div>
             </div>
@@ -69,16 +69,16 @@ get_header(); ?>
     <?php
         $secitonFive = get_field('section_five');
         if($secitonFive):?>
-          <div class="card">
+          <div class="card box-item-up">
             <?php echo $secitonFive['register_with_us']; ?>
           </div>
-          <div class="card">
+          <div class="card box-item-up">
             <?php echo $secitonFive['faq']; ?>
           </div>
-          <div class="card">
+          <div class="card box-item-up">
             <?php echo $secitonFive['meet_the_team']; ?>
           </div>
-          <div class="card">
+          <div class="card box-item-up">
             <?php echo $secitonFive['contact_us']; ?>
           </div>
         <?php endif; ?>
