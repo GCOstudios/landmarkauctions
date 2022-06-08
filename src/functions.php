@@ -204,10 +204,16 @@ add_action( 'widgets_init', 'landmarkauctions_widgets_init' );
  * Enqueue scripts and styles.
  */
 function landmarkauctions_scripts() {
+	wp_enqueue_style( 'landmarkauctions-aoscss', 'https://unpkg.com/aos@2.3.1/dist/aos.css', array(), '' );
+
 	wp_enqueue_style( 'landmarkauctions-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'landmarkauctions-style', 'rtl', 'replace' );
 
+	wp_enqueue_script( 'landmarkauctions-aosjs', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), _S_VERSION, true );
+
 	wp_enqueue_script( 'landmarkauctions-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
+	wp_enqueue_script( 'landmarkauctions-script', get_template_directory_uri() . '/js/script.js', array('jquery'), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
