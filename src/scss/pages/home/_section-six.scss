@@ -39,6 +39,7 @@
 
     @include mixins.breakpoint(breakpoints.$bp-mobile) {
       font-size: 45px!important;
+      line-height: 1.2;
     }
   }
 
