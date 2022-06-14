@@ -1,0 +1,22 @@
+@use '../abstracts/colors';
+
+h1 {
+  margin-top: 40px;
+
+  .type-page & {
+    font-size: 45px;
+    font-weight: 500;
+    line-height: 1.2;
+    position: relative;
+
+    &::before {
+      content: '';
+      background-color: colors.$m2;
+      height: 4px;
+      width: 65px;
+      position: absolute;
+      top: -15px;
+      left: 0;
+    }
+  }
+}
