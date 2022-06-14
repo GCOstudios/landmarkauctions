@@ -1,0 +1,21 @@
+@use '../abstracts/colors';
+
+.color-blue {
+  color: colors.$m1;
+}
+
+.color-gold {
+  color: colors.$m2;
+}
+
+.h2 {
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.h3 {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
+}
