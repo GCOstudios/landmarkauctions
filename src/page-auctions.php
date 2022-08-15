@@ -15,11 +15,25 @@ get_header(); ?>
       $auctions = wpgetapi_endpoint( 'ams1', 'auctions', array('debug' => false) );
       // $propteries = json_decode($auctions);
       // var_dump($auctions);
-      foreach ($auctions as $value) {
-        echo "<br>";
-        foreach ($value as $item => $val) {
-          echo "$item = $val<br>";
-        }
+      $i = 0;
+
+      // foreach ($auctions as $value) {
+      //   echo "<pre>"; var_dump($value);
+      // }
+
+      foreach ($auctions as $value => $val) {
+        echo '<a href="/tabs?propertyId='. $auctions[$value]['ID'] .'">';
+        echo '<div class="property-card">';
+        echo '<img src="'.$auctions[$value]['Thumbnail'].'" alt="" />';
+        echo '<p>'. $auctions[$value]['Tagline'] .'</p>';
+        echo '<p>Status: '. $auctions[$value]['SoldStatus'] . '</p>';
+        echo '<p>Auction '. $auctions[$value]['StartDate']. '</p>';
+        echo '<p>Lot </p>';
+        echo '<p>Sector </p>';
+        echo '<p>Price Guide Price*: '. $auctions[$value]['GuidePrice']. '</p>';
+        echo '<p>Yield </p>';
+        echo '</div>';
+        echo '</a>';
       }
     ?>
 
