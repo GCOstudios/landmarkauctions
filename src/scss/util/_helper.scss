@@ -9,7 +9,7 @@
 }
 
 .color-offwhite {
-  color: color.$s2;
+  color: colors.$s2;
 }
 
 .h2 {
@@ -22,4 +22,8 @@
   font-size: 28px;
   font-weight: 500;
   line-height: 1.2;
+}
+
+.img-responsive {
+  max-width: 100%;
 }
