@@ -2,8 +2,12 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
-  margin: auto;
-  max-width: 1140px;
+  margin: auto auto 60px;
+  // max-width: 1140px;
+}
+
+.grid-filters {
+  margin-bottom: 30px;
 }
 
 .grid-img {
@@ -12,4 +16,16 @@
   background-size: cover;
   width: 255px;
   height: 218px;
+}
+
+.grid-info {
+  padding: 10px;
+}
+
+.grid-address {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 10px;
+  min-height: 40px;
 }
