@@ -3,6 +3,29 @@ jQuery(function($) {
   'use strict';
 
   var ENHANCEMENTS;
+  var FETCHAPI;
+
+  // ================================
+  // Enhancements
+  // ================================
+  FETCHAPI = {
+
+    init: function() {
+      this.fetchProperty();
+    },
+
+    fetchProperty: async function() {
+      let propertyId = '181332';
+      const response = await fetch(`https://ams-services.eigroup.co.uk/data/lot/getlot/${propertyId}`, {
+        headers: {
+          'Authorization': 'Basic am9ubnlfZGlnaXRhbEBob3RtYWlsLmNvLnVrOlN1bnNoMW5lIQ==',
+          'Content-Type': 'application/json',
+        },
+        mode: 'no-cors',
+      });
+      console.log(response);
+    }
+  };
 
   // ================================
   // Enhancements
@@ -60,6 +83,7 @@ jQuery(function($) {
 
   };
   
+  FETCHAPI.init();
   ENHANCEMENTS.init();
 
 }); //jQuery
