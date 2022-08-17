@@ -1,7 +1,7 @@
 <?php if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 /**
- * Template Name: Demo Page
+ * Template Name: Auction Listing
  */
 
 get_header(); ?>
