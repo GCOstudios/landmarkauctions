@@ -19,7 +19,7 @@ get_header(); ?>
     <?php // do our api calls
       $auctions = wpgetapi_endpoint( 'ams1', 'auctions', array('debug' => false) );
       // $propteries = json_decode($auctions);
-      var_dump($auctions);
+      // var_dump($auctions);
       $i = 1;
 
       // foreach ($auctions as $value) {
@@ -36,7 +36,7 @@ get_header(); ?>
         if ($img_url == null) {
           $img_url = "https://via.placeholder.com/255x218";
         }
-        echo '<a href="/property-details?propertyId='. $auctions[$value]['ID'] .'">';
+        echo '<a href="/property-details?lotId='. $auctions[$value]['LotID'] .'">';
         echo '<div class="property-card">';
           echo '<div style="background-image: url('. $img_url .');" class="grid-img"></div>';
           echo '<div class="grid-info">';
