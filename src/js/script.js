@@ -9,45 +9,18 @@ jQuery(function ($) {
   // ================================
   FETCHAPI = {
     init: function () {
-      // this.fetchProperty();
-      // this.fetchAll();
+      this.slider();
     },
 
-    fetchProperty: async function () {
-      // let propertyId = '181332';
-      // const response = await fetch(`https://ams-services.eigroup.co.uk/data/lot/getlot/${propertyId}`, {
-      //   headers: {
-      //     'Authorization': 'Basic am9ubnlfZGlnaXRhbEBob3RtYWlsLmNvLnVrOlN1bnNoMW5lIQ==',
-      //     'Content-Type': 'application/json',
-      //   },
-      //   mode: 'no-cors',
-      // });
-      // console.log(response);
-    },
-
-    fetchAll: async function () {
-      const url = 'https://ams-services.eigroup.co.uk/data/auction/gettimedauctions';
-      const credentials = btoa("jonny_digital@hotmail.co.uk:Sunsh1ne!")
-      const auth = `Basic ${credentials}`;
-
-      try {
-        const response = await fetch(
-          url,
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: auth,
-            },
-            mode: "cors",
-          }
-        );
-
-        console.log(response);
-      } catch (error) {
-        console.log(error);
-      }
-    },
+    slider: function () {
+      $('.featured').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        autoplay: true,
+        autplaySpeed: 2000
+      });
+    }
   };
 
   // ================================
