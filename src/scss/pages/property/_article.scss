@@ -1,0 +1,91 @@
+@use '../../abstracts/breakpoints';
+
+
+.single-property {
+
+  .container-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-content: space-between;
+    margin: auto;
+    max-width: breakpoints.$container;
+    grid-template-areas: 
+      "title title"
+      "content sidebar";
+  }
+
+  .property-title {
+    grid-area: title;
+
+    h1 {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+    h2 {
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+
+  article {
+    grid-area: content;
+    max-width: 685px;
+    padding-bottom: 40px;
+
+    h3 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    p {
+      margin-bottom: 30px;
+    }
+  }
+
+  .lot-tagline {
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 50px;
+  }
+
+  .disclaimer {
+    margin-top: 86px;
+  }
+
+  .sidebar {
+    grid-area: sidebar;
+    max-width: 475px;
+    width: 100%;
+  }
+
+  .login-box {
+    background-color: #f5f5f5;
+    border: 1px solid #d6d6d6;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .documents {
+    margin-bottom: 2rem;
+
+    h4 {
+      font-size: 16px;
+      font-weight: 500;
+      border-bottom: 1px solid #cccccc;
+      margin-bottom: 5px;
+    }
+
+    a {
+      color: #337ab7;
+      text-decoration: none;
+
+      &:focus,
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
