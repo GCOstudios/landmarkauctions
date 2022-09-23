@@ -3,6 +3,27 @@
 
 .single-property {
 
+  .property-nav {
+    background-color: #ddd;
+
+    .container {
+      text-align: right;
+    }
+
+    a {
+      color: #142d47;
+      display: inline-block;
+      padding: 9px 20px;
+      text-decoration: none;
+      transition: 0.3s;
+
+      &:focus,
+      &:hover {
+        background-color: #f1f1f1;
+      }
+    }
+  }
+
   .container-area {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -51,41 +72,7 @@
   }
 
   .disclaimer {
+    font-size: 12px;
     margin-top: 86px;
-  }
-
-  .sidebar {
-    grid-area: sidebar;
-    max-width: 475px;
-    width: 100%;
-  }
-
-  .login-box {
-    background-color: #f5f5f5;
-    border: 1px solid #d6d6d6;
-    margin-bottom: 2rem;
-    padding: 1rem;
-    text-align: center;
-  }
-
-  .documents {
-    margin-bottom: 2rem;
-
-    h4 {
-      font-size: 16px;
-      font-weight: 500;
-      border-bottom: 1px solid #cccccc;
-      margin-bottom: 5px;
-    }
-
-    a {
-      color: #337ab7;
-      text-decoration: none;
-
-      &:focus,
-      &:hover {
-        text-decoration: underline;
-      }
-    }
   }
 }

@@ -1,0 +1,103 @@
+.sidebar {
+  grid-area: sidebar;
+  max-width: 475px;
+  width: 100%;
+}
+
+.login-box {
+  background-color: #f5f5f5;
+  border: 1px solid #d6d6d6;
+  margin-bottom: 2rem;
+  padding: 2rem 1rem;
+  text-align: center;
+
+  .lead-text {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .guide-price {
+    font-size: 30px;
+    color: #b28d52;
+    margin: 3px 0 20px;
+  }
+
+  .bid-section {
+    background-color: #142D47;
+    border: 1px solid #cccccc;
+    margin-bottom: 2rem;
+    padding: 1rem;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  .sep {
+    margin: 15px 0 20px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #fff;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .bid-schedule {
+    width: 48%;
+  }
+
+  .bid-heading {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .bid-time {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #3c763d;
+  }
+
+  .auction-cta {
+    font-size: 13px;
+    display: block;
+    background-color: #e5e5e5;
+    border: 1px solid #cccccc;
+    color: black;
+    padding: 5px 10px;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:focus,
+    &:hover {
+      background-color: #F7F7F7;
+    }
+  }
+}
+
+.documents {
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+
+  h4 {
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 5px;
+  }
+
+  a {
+    color: #337ab7;
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
