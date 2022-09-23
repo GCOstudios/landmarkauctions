@@ -27,9 +27,17 @@ $data = json_decode($response, true);
 // echo '<p>';
 // echo $data["LotData"][1]["Value"];
 // echo var_dump($data);
+
+$auctionStartDate = strtotime($data['TimedAuction']['StartDate']);
+$auctionEndDate = strtotime($data['TimedAuction']['EndDate']);
 ?>
 
 <main id="primary" class="site-main single-property">
+  <div class="property-nav">
+    <div class="container">
+      <a href="/auctions-template/">Lot List</a>
+    </div>
+  </div>
   <div class="container-area">
     <div class="property-title">
       <h1><?php echo $data['FullAddress']; ?></h1>
@@ -64,7 +72,24 @@ $data = json_decode($response, true);
     </article>
     <div class="sidebar">
       <div class="login-box">
-        <h3>Auction Box coming soon!</h3>
+        <span class="lead-text">Minimum Opening Bid</span>
+        <h2 class="guide-price"><?php echo $data['GuidePrice'] ?></h2>
+        <div class="bid-section">
+          <a href="">Log in/register to bid</a>
+        </div>
+        <hr class="sep" >
+        <div class="row">
+          <div class="bid-schedule">
+            <p class="bid-heading">Bigging Opens On</p>
+            <p class="bid-time"><?php echo date('jS M Y h:i',$auctionStartDate); ?></p>
+            <a class="auction-cta" href="#">Watch</a>
+          </div>
+          <div class="bid-schedule">
+            <p class="bid-heading">Scheduled End Date</p>
+            <p class="bid-time"><?php echo date('jS M Y h:i',$auctionEndDate); ?></p>
+            <a class="auction-cta" href="#">Help on Bidding</a>
+          </div>
+        </div>
       </div>
       <div class="documents">
         <h4>Agreement Documents</h4>
