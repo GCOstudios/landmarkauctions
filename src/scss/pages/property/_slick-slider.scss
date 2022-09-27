@@ -1,4 +1,16 @@
-.slick-slider {}
+.slick-slider {
+  // How to add gutters
+  // ====================================
+  /* the slides */
+  .slick-slide {
+    margin: 0 5px;
+  }
+
+  /* the parent */
+  .slick-list {
+    margin: 0 -5px;
+  }
+}
 
 .slick-arrow {
   position: absolute;
@@ -12,3 +24,7 @@
 }
 
 .slick-prev {}
+
+.property-thumb {
+  margin-bottom: 2rem;
+}
