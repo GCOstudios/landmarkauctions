@@ -47,9 +47,14 @@ $auctionEndDate = strtotime($data['TimedAuction']['EndDate']);
       <div style="display: none">
         <?php echo do_shortcode('[slick-slider]'); ?>
       </div>
-        <div class="featured image">
+        <div class="property-main image">
           <?php for ($i = 0; $i < count($data['LotImages']); $i++) { ?>
             <img src="<?php echo $data['LotImages'][$i]['HighResUrl'] ?>" alt="" />
+          <?php } ?>
+        </div>
+        <div class="property-thumb image">
+          <?php for ($i = 0; $i < count($data['LotImages']); $i++) { ?>
+            <img src="<?php echo $data['LotImages'][$i]['HighResUrl'] ?>" alt="" width="165" height="100" />
           <?php } ?>
         </div>
         <div class="entry">
@@ -75,19 +80,19 @@ $auctionEndDate = strtotime($data['TimedAuction']['EndDate']);
         <span class="lead-text">Minimum Opening Bid</span>
         <h2 class="guide-price"><?php echo $data['GuidePrice'] ?></h2>
         <div class="bid-section">
-          <a href="">Log in/register to bid</a>
+          <a href="https://passport.eigroup.co.uk/account/login">Log in/register to bid</a>
         </div>
         <hr class="sep" >
         <div class="row">
           <div class="bid-schedule">
             <p class="bid-heading">Bigging Opens On</p>
             <p class="bid-time"><?php echo date('jS M Y h:i',$auctionStartDate); ?></p>
-            <a class="auction-cta" href="#">Watch</a>
+            <a class="auction-cta" href="https://passport.eigroup.co.uk/account/login">Watch</a>
           </div>
           <div class="bid-schedule">
             <p class="bid-heading">Scheduled End Date</p>
             <p class="bid-time"><?php echo date('jS M Y h:i',$auctionEndDate); ?></p>
-            <a class="auction-cta" href="#">Help on Bidding</a>
+            <a class="auction-cta" href="https://passport.eigroup.co.uk/account/login">Help on Bidding</a>
           </div>
         </div>
       </div>
