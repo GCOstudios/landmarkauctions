@@ -13,12 +13,23 @@ jQuery(function ($) {
     },
 
     slider: function () {
-      $('.featured').slick({
-        dots: false,
-        infinite: true,
-        speed: 300,
+      $('.property-main').slick({
         autoplay: true,
-        autplaySpeed: 2000
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.property-thumb'
+      });
+      $('.property-thumb').slick({
+        autoplay: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.property-main',
+        arrows: false,
+        dots: false,
+        focusOnSelect: true,
+        centerMode: true
       });
     }
   };
