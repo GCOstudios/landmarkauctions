@@ -26,14 +26,23 @@
 
   .container-area {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: 1fr;
     justify-content: space-between;
+    grid-template-areas:
+      "title"
+      "content"
+      "sidebar";
     margin: auto;
-    max-width: breakpoints.$container;
-    grid-template-areas: 
-      "title title"
-      "content sidebar";
+    padding: 0 1rem;
+
+    @media (min-width: 1180px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      grid-template-areas: 
+        "title title"
+        "content sidebar";
+      max-width: breakpoints.$container;
+    }
   }
 
   .property-title {
@@ -52,8 +61,12 @@
 
   article {
     grid-area: content;
-    max-width: 685px;
+    max-width: 330px;
     padding-bottom: 40px;
+
+    @media (min-width: 600px) {
+      max-width: 685px;
+    }
 
     h3 {
       font-size: 20px;
