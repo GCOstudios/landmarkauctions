@@ -23,6 +23,10 @@ curl_close($curl);
 // echo "<pre><code>"; var_dump($response);
 $data = json_decode($response, true);
 
+$isEmpty = empty($data);
+$address = $data['FullAddress'];
+$map = '[vsgmap address="'. $address .'"]';
+
 // echo $data["AssignedUserID"];
 // echo '<p>';
 // echo $data["LotData"][1]["Value"];
@@ -40,8 +44,16 @@ $auctionEndDate = strtotime($data['TimedAuction']['EndDate']);
   </div>
   <div class="container-area">
     <div class="property-title">
-      <h1><?php echo $data['FullAddress']; ?></h1>
-      <h2>Online Auction | Guide Price*: <?php echo $data['GuidePrice'] ?></h2>
+      <h1><?php if ($isEmpty) {
+        echo "Page is Empty";
+      } else {
+        echo $data['FullAddress'];
+      } ?></h1>
+      <h2>Online Auction | Guide Price*: <?php if ($isEmpty) {
+        echo "£0";
+      } else {
+        echo $data['GuidePrice'];
+      } ?></h2>
     </div>
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemtype="https://schema.org/WebPage" itemscope="itemscope">
       <div style="display: none">
@@ -103,6 +115,14 @@ $auctionEndDate = strtotime($data['TimedAuction']['EndDate']);
       <div class="documents">
         <h4>Legal Documents</h4>
         <a href="<?php echo $data['LegalDocumentUrl'] ?>">Login to view legal documents</a>
+      </div>
+      <div style="margin-bottom: 80px;" class="documents">
+        <h4>Share</h4>
+        <?php echo do_shortcode("[TheChamp-Sharing]"); ?>
+      </div>
+      <div class="documents">
+        <h4>Map</h4>
+        <?php echo do_shortcode($map); ?>
       </div>
     </div>
   </div>
