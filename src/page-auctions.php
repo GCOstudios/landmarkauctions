@@ -56,7 +56,7 @@ get_header(); ?>
         echo '</div>';
         echo '</a>';
 
-        if ($i++ == 12) break;
+        // if ($i++ == 12) break;
       }
     ?>
     </div>
