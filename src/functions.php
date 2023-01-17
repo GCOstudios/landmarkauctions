@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.5.0' );
+	define( '_S_VERSION', '1.5.1' );
 }
 
 /**
@@ -211,9 +211,9 @@ function landmarkauctions_scripts() {
 
 	wp_enqueue_script( 'landmarkauctions-aosjs', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), _S_VERSION, true );
 
-	if (is_page_template('page-property.php')) { 
-		wp_enqueue_script( 'landmarkauctions-property-widget', 'https://widget.eigonlineauctions.com/loader.js', array(), _S_VERSION, true );
-	}
+	// if (is_page_template('page-property.php')) { 
+	// 	wp_enqueue_script( 'landmarkauctions-property-widget', 'https://widget.eigonlineauctions.com/loader.js', array(), _S_VERSION, true );
+	// }
 
 	wp_enqueue_script( 'landmarkauctions-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 

@@ -88,25 +88,9 @@ $auctionEndDate = strtotime($data['TimedAuction']['EndDate']);
       </di>
     </article>
     <div class="sidebar">
-      <div class="login-box">
-        <span class="lead-text">Minimum Opening Bid</span>
-        <h2 class="guide-price"><?php echo $data['GuidePrice'] ?></h2>
-        <div class="bid-section">
-          <a href="https://passport.eigroup.co.uk/account/login">Log in/register to bid</a>
-        </div>
-        <hr class="sep" >
-        <div class="row">
-          <div class="bid-schedule">
-            <p class="bid-heading">Bigging Opens On</p>
-            <p class="bid-time"><?php echo date('jS M Y h:i',$auctionStartDate); ?></p>
-            <a class="auction-cta" href="https://passport.eigroup.co.uk/account/login">Watch</a>
-          </div>
-          <div class="bid-schedule">
-            <p class="bid-heading">Scheduled End Date</p>
-            <p class="bid-time"><?php echo date('jS M Y h:i',$auctionEndDate); ?></p>
-            <a class="auction-cta" href="https://passport.eigroup.co.uk/account/login">Help on Bidding</a>
-          </div>
-        </div>
+      <div class="documents">
+        <h4>Map</h4>
+        <?php echo do_shortcode($map); ?>
       </div>
       <div class="documents">
         <h4>Agreement Documents</h4>
@@ -120,12 +104,9 @@ $auctionEndDate = strtotime($data['TimedAuction']['EndDate']);
         <h4>Share</h4>
         <?php echo do_shortcode("[TheChamp-Sharing]"); ?>
       </div>
-      <div class="documents">
-        <h4>Map</h4>
-        <?php echo do_shortcode($map); ?>
-      </div>
     </div>
   </div>
 </main>
+<script defer="defer" id="eig-online" src="https://widget.eigonlineauctions.com/loader.js" type="text/javascript"></script>
 
 <?php get_footer();
