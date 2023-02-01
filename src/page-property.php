@@ -39,6 +39,7 @@ $auctionEndDate = strtotime($data['TimedAuction']['EndDate']);
 <main id="primary" class="site-main single-property">
   <div class="property-nav">
     <div class="container">
+      <a href="javascript:history.back()">Go Back</a>
       <a href="/auctions-template/">Lot List</a>
     </div>
   </div>
