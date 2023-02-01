@@ -27,6 +27,8 @@ $filteredFutureAuction = array_filter(
   }
 );
 
+asort($filteredFutureAuction);
+
 // var_dump($filteredFutureAuction);
 // var_dump($currentTime);
 
@@ -59,7 +61,12 @@ $filteredFutureAuction = array_filter(
         }
         echo '<a href="/property-details?lotId='. $filteredFutureAuction[$value]['LotID'] .'">';
         echo '<div class="property-card">';
-          echo '<div style="background-image: url('. $img_url .');" class="grid-img"></div>';
+          if ($filteredFutureAuction[$value]['SoldStatus'] == 1) {
+            echo '<div class="sold-container"><img src="" alt="Auction Ended" /><div style="background-image: url('. $img_url .');" class="grid-img"></div></div>';
+          } else {
+            echo '<div style="background-image: url('. $img_url .');" class="grid-img"></div>';
+          }
+          
           echo '<div class="grid-info">';
             echo '<h4 class="grid-address">'. $filteredFutureAuction[$value]['Tagline'] .'</h4>';
             echo '<hr>';
@@ -69,7 +76,11 @@ $filteredFutureAuction = array_filter(
                 echo '<li><span class="primary-text">Auction</span> '.date('d/m/Y H:i', strtotime($start_date)). '</li>';
                 echo '<li><span class="primary-text">Lot</span> </li>';
                 echo '<li><span class="primary-text">Sector</span> </li>';
-                echo '<li><span class="primary-text">Price</span> Guide Price*:&nbsp;&nbsp;<strong>&pound;'. $filteredFutureAuction[$value]['GuidePrice']. '</strong></li>';
+                if ($filteredFutureAuction[$value]['SoldStatus'] == 1) {
+                  echo '<li><span class="primary-text">Guide Price*:</span>&nbsp;&nbsp;<strong>Sold Prior</strong></li>';
+                } else {
+                  echo '<li><span class="primary-text">Guide Price*:</span>&nbsp;&nbsp;<strong>&pound;'. $filteredFutureAuction[$value]['GuidePrice']. '</strong></li>';
+                }
                 echo '<li><span class="primary-text">Yield</span> </li>';
               echo '</ul>';
             echo '</div>';
