@@ -4,6 +4,7 @@
   /* the slides */
   .slick-slide {
     margin: 0 5px;
+    max-height: 500px;
   }
 
   /* the parent */
@@ -25,6 +26,14 @@
 
 .slick-prev {}
 
+.property-main {
+  margin-bottom: 10px;
+}
+
 .property-thumb {
   margin-bottom: 2rem;
+
+  .slick-slide {
+    max-height: 140px;
+  }
 }
