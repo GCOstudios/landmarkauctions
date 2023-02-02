@@ -60,11 +60,16 @@ $auctionEndDate = strtotime($data['TimedAuction']['EndDate']);
       <div style="display: none">
         <?php echo do_shortcode('[slick-slider]'); ?>
       </div>
+      <div class="property-image-container">
+        <?php if ($data['SoldStatus'] == 'SoldPrior') {
+          echo '<img class="ribbon" src="'. get_template_directory_uri() .'/images/auction-ended.png" alt="Auction Ended" />';
+        } ?>
         <div class="property-main image">
           <?php for ($i = 0; $i < count($data['LotImages']); $i++) { ?>
             <img src="<?php echo $data['LotImages'][$i]['HighResUrl'] ?>" alt="" />
           <?php } ?>
         </div>
+      </div>
         <div class="property-thumb image">
           <?php for ($i = 0; $i < count($data['LotImages']); $i++) { ?>
             <img src="<?php echo $data['LotImages'][$i]['HighResUrl'] ?>" alt="" width="165" height="100" />
