@@ -62,7 +62,7 @@ asort($filteredFutureAuction);
         echo '<a href="/property-details?lotId='. $filteredFutureAuction[$value]['LotID'] .'">';
         echo '<div class="property-card">';
           if ($filteredFutureAuction[$value]['SoldStatus'] == 1) {
-            echo '<div class="sold-container"><img src="" alt="Auction Ended" /><div style="background-image: url('. $img_url .');" class="grid-img"></div></div>';
+            echo '<div class="sold-container"><img class="ribbon" src="'. get_template_directory_uri() .'/images/auction-ended.png" alt="Auction Ended" /><div style="background-image: url('. $img_url .');" class="grid-img"></div></div>';
           } else {
             echo '<div style="background-image: url('. $img_url .');" class="grid-img"></div>';
           }
