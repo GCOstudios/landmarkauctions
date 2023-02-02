@@ -1,0 +1,11 @@
+.property-image-container,
+.sold-container {
+  position: relative;
+
+  .ribbon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+}
