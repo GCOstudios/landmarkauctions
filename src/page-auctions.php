@@ -41,7 +41,7 @@ asort($filteredFutureAuction);
 <main id="primary" class="site-main">
   <article id="post-<?php the_ID(); ?>" <?php post_class('container'); ?> itemtype="https://schema.org/WebPage" itemscope="itemscope">
     <header>
-      <h1>Available Properties</h1>
+      <h1><?php the_title(); ?></h1>
     </header>
     <hr>
     <div class="grid-filters">
